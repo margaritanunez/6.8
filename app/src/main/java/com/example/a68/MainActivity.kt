@@ -14,10 +14,10 @@ import android.os.Bundle
     [x] Cliente de Retrofit
 [ ] Repositorio
 [ ] Local:
-    [ ] Entity
-    [ ] DAO
-    [ ] Database
-[ ] View Model
+    [x] Entity
+    [x] DAO
+    [x] Database
+[x] View Model
 [ ] 2 pantallas: Listado y detalle
 [ ] Navigation
 [ ] Listado: RecyclerView + ViewHolder + Adapter
