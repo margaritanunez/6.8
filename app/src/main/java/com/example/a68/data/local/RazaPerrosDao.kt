@@ -13,5 +13,5 @@ interface RazaPerrosDao {
     suspend fun insertRaza(razaPerrosEntity: RazaPerrosEntity)
 
     @Query("select * from tabla_raza_perros order by raza asc")
-    fun getRazas(): LiveData<RazaPerrosEntity>
+    fun getRazas(): LiveData<List<RazaPerrosEntity>>
 }
