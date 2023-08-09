@@ -2,20 +2,21 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.ListFragment">
+    android:layout_height="wrap_content">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvRazasPerros"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#64577E"
-        android:backgroundTint="#64577E"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    <TextView
+        android:id="@+id/tvRazasPerros"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="#9A7474"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#CDFFFFFF"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

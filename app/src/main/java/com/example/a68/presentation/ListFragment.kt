@@ -10,7 +10,7 @@ import com.example.a68.R
 import com.example.a68.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
-    lateinit var binding: FragmentListBinding
+    lateinit var binding: FragmentListBinding //lateinit es responsabilidad del desarrollador
     private val razaPerrosViewModel: RazaPerrosViewModel by activityViewModels()
 
 

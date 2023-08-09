@@ -25,9 +25,9 @@ class AdapterRazaPerros : RecyclerView.Adapter<AdapterRazaPerros.ItemLayoutViewH
         return listItemRazas.size
     }
 
-    fun setData(raza: List<RazaPerrosEntity>){
+    fun setData(razas: List<RazaPerrosEntity>){ //listado, obviamente plural
         this.listItemRazas.clear()
-        this.listItemRazas.addAll(raza)
+        this.listItemRazas.addAll(razas)
         notifyDataSetChanged()
     }
 
