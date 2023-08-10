@@ -32,8 +32,16 @@ class DetalleFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentDetalleBinding.inflate(layoutInflater, container, false )
-        //initAdapter()
+        initAdapter()
         razaPerrosViewModel.getDetallePerroViewModel(param1.toString())
         return binding.root
+    }
+
+    private fun initAdapter() {
+        val adapterDetalleRaza = AdapterDetalleRaza()
+        binding.rvDetalleRaza.adapter = adapterDetalleRaza
+        razaPerrosViewModel.detalleLiveData(param1.toString()).observe(viewLifecycleOwner){
+            adapterDetalleRaza.setDataDetalle(it)
+        }
     }
 }
