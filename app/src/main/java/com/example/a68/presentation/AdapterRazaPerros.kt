@@ -1,5 +1,6 @@
 package com.example.a68.presentation
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
@@ -36,9 +37,11 @@ class AdapterRazaPerros : RecyclerView.Adapter<AdapterRazaPerros.ItemLayoutViewH
 
     class ItemLayoutViewHolder (val razabinding: ItemLayoutBinding) : RecyclerView.ViewHolder(razabinding.root) {
         fun bind(razaPerros: RazaPerrosEntity){
+            val bundle = Bundle()
             razabinding.tvRazasPerros.text = razaPerros.raza
             razabinding.tvRazasPerros.setOnClickListener {
-                Navigation.findNavController(razabinding.root).navigate(R.id.action_listFragment_to_detalleFragment)
+                bundle.putString("id", razaPerros.raza)
+                Navigation.findNavController(razabinding.root).navigate(R.id.action_listFragment_to_detalleFragment, bundle)
             }
         }
 

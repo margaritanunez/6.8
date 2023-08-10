@@ -23,4 +23,8 @@ class RazaPerrosViewModel (application: Application): AndroidViewModel(applicati
     }
 
     fun razaPerrosLiveData() = repository.getRazaEntity()
+
+    fun getDetallePerroViewModel(id: String) = viewModelScope.launch{
+        repository.getDetallePerro(id)
+    }
 }

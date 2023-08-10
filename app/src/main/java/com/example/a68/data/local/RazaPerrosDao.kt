@@ -14,4 +14,7 @@ interface RazaPerrosDao {
 
     @Query("select * from tabla_raza_perros order by raza asc")
     fun getRazas(): LiveData<List<RazaPerrosEntity>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertDetallePerro(razaDetalleEntity: RazaDetalleEntity)
 }
