@@ -2,7 +2,9 @@ package com.example.a68.presentation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.example.a68.R
 import com.example.a68.data.local.RazaPerrosEntity
 import com.example.a68.data.remote.RazaPerros
 import com.example.a68.databinding.ItemLayoutBinding
@@ -35,6 +37,9 @@ class AdapterRazaPerros : RecyclerView.Adapter<AdapterRazaPerros.ItemLayoutViewH
     class ItemLayoutViewHolder (val razabinding: ItemLayoutBinding) : RecyclerView.ViewHolder(razabinding.root) {
         fun bind(razaPerros: RazaPerrosEntity){
             razabinding.tvRazasPerros.text = razaPerros.raza
+            razabinding.tvRazasPerros.setOnClickListener {
+                Navigation.findNavController(razabinding.root).navigate(R.id.action_listFragment_to_detalleFragment)
+            }
         }
 
     }
