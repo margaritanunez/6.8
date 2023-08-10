@@ -22,9 +22,7 @@ class ListFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentListBinding.inflate(layoutInflater, container, false)
         initAdapter()
-        binding.rvRazasPerros.setOnClickListener{
-            razaPerrosViewModel.getAllRazas()
-        }
+        razaPerrosViewModel.getAllRazas()
         return binding.root
     }
 
