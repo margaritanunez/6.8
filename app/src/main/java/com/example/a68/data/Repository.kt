@@ -10,6 +10,7 @@ import com.example.a68.data.remote.RazaPerrosApi
 class Repository (private val razaPerrosApi: RazaPerrosApi, private val razaPerrosDao: RazaPerrosDao){
 
     fun getRazaEntity(): LiveData<List<RazaPerrosEntity>>  = razaPerrosDao.getRazas()
+    fun getDetalleEntity(id: String): LiveData<List<RazaDetalleEntity>> =razaPerrosDao.getRazaDetalle(id)
 
     suspend fun getRazas(){
         val response = razaPerrosApi.getData()
