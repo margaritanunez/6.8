@@ -17,8 +17,8 @@ class Repository (private val razaPerrosApi: RazaPerrosApi, private val razaPerr
         if (response.isSuccessful) {
             val message = response.body()!!.message
             val keys= message.keys
-            keys.forEach{
-                val razaPerrosEntity= RazaPerrosEntity(it)
+            keys.forEach{raza->
+                val razaPerrosEntity= raza.toRazaEntity()
                 razaPerrosDao.insertRaza(razaPerrosEntity)
 
             }
@@ -29,8 +29,8 @@ class Repository (private val razaPerrosApi: RazaPerrosApi, private val razaPerr
     suspend fun getDetallePerro(id:String){
         val response = razaPerrosApi.getDetallePerro(id)
         if (response.isSuccessful) {
-            response.body()!!.message.forEach{
-                val razaDetalleEntity = RazaDetalleEntity(id, it)
+            response.body()!!.message.forEach{url->
+                val razaDetalleEntity = url.toEntity(id)
                 razaPerrosDao.insertDetallePerro(razaDetalleEntity)
             }
 
