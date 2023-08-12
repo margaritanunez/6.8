@@ -20,4 +20,8 @@ interface RazaPerrosDao {
 
     @Query("select * from tabla_detalle_razas where razaDetalle like :id")
     fun getRazaDetalle(id: String): LiveData<List<RazaDetalleEntity>>
+
+    //para pruebas android
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertRaza(razaPerrosEntity: List<RazaPerrosEntity>)
 }
